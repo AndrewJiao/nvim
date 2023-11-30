@@ -25,14 +25,24 @@ map('n', '<C-;>', ':HopPattern<CR>', opt)
 -- 编辑
 --复制当前行
 map('n','yp','yyp',opt)
---基于comment插件注释 see :h coment.config 
-map('n','<C-/>','<Plug>(comment_toggle_linewise_current)',opt)
-map('n','<C-S-/>','<Plug>(comment_toggle_blockwise_current)',opts)
-map('v','<C-/>','<Plug>(comment_toggle_linewise_visual)',opts)
-map('v','<C-S-/>','<Plug>(comment_toggle_blockwise_visual)',opts)
 
--- 格式化
-map('n','<leader>fm',':Format<CR>',opts)
-map('n','<leader>Fm',':FormatWrite<CR>',opts)
-map('v','<leader>fm',':<C-U>Format<CR>',opts)
-map('v','<leader>Fm',':<C-U>FormatWrite<CR>',opts)
+
+
+-- 在Normal模式下映射上下键  
+map('n', '<C-k>','<Up>',  opts)  
+map('n', '<C-j>','<Down>',  opts)  
+map('n', '<C-K>','<Up>',  opts)  
+map('n', '<C-J>','<Down>',  opts)  
+--   
+-- 在Insert模式下映射上下键  
+map('i', '<C-k>','<Up>',  opts)  
+map('i', '<C-j>','<Down>',  opts)  
+map('i', '<C-l>','<Right>',  opts)  
+map('i', '<C-h>','<Left>',  opts)  
+map('i', '<C-K>','<Up>',  opts)  
+map('i', '<C-J>','<Down>',  opts)  
+map('i', '<C-L>','<Right>',  opts)  
+map('i', '<C-H>','<Left>',  opts)  
+
+return {opts = opts, map = map}
+    
