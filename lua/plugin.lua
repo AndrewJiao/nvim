@@ -13,7 +13,8 @@ local bufferline = require("plugin.bufferline")
 local comment = require("plugin.comment")
 -- formatter
 local formatter = require("plugin.formatter")
-
+-- treesitter
+local treesitter = require("plugin.treesitter")
 -- 主题
 
 local theme = require("theme")
@@ -42,5 +43,6 @@ require("lazy").setup({
     comment,
     formatter,
     telescope,
-    bufferline
+    bufferline,
+    treesitter
 })

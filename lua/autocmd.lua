@@ -1,6 +1,5 @@
-vim.api.nvim_command([[  
-  augroup my_autocmds  
-    autocmd!  
-    autocmd BufLeave * :w
-  augroup END  
-]])
+vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged","BufLeave","BufWinLeave" }, {
+    pattern = { "*" },
+    command = "silent! wall",
+    nested = true,
+})
