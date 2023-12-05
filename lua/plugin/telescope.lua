@@ -13,7 +13,7 @@ local telescope = {
             map('n', '<leader>fb', builtin.buffers, opts)
             map('n', '<leader>fh', builtin.oldfiles, opts)
             map('n', '<leader>gb', builtin.git_branches, opts)
-            map('n', '<leader>gc', builtin.git_bcommits, opts)
+            map('n', '<leader>gh', builtin.git_bcommits, opts)
 
 
             -- theme

@@ -6,7 +6,8 @@ local neo_tree = require("plugin.neo_tree")
 local flash = require("plugin.flash")
 -- 文件搜索
 local telescope = require("plugin.telescope")
-
+-- 标签页
+local bufferline = require("plugin.bufferline")
 
 -- 注释
 local comment = require("plugin.comment")
@@ -40,5 +41,6 @@ require("lazy").setup({
     file_type,
     comment,
     formatter,
-    telescope
+    telescope,
+    bufferline
 })

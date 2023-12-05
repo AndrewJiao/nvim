@@ -21,6 +21,8 @@ local formatter = {
             {"typescript","prettier"},
             {"typescriptreact","prettier"},
             {"json","prettier"},
+            {"java","clangformat"},
+            {"xml","xmllint"},
             -- {"lua","luafmt"},
         }
         for _, name_pattern in ipairs(ft_names) do
