@@ -4,19 +4,24 @@ local map = keymapping.map
 local opts = keymapping.opts
 
 
---基于comment插件注释 see :h coment.config 
+--基于comment插件注释 see :h coment.config
 map('n','-','zc',opts)
 map('n','+','zx',opts)
 
 local M = {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    config = function () 
-      local configs = require("nvim-treesitter.configs")
-      configs.setup({
+    config = function ()
+        local configs = require("nvim-treesitter.configs")
+        configs.setup({
             -- 安装 language parser
             -- :TSInstallInfo 命令查看支持的语言
-            ensure_installed = {"html", "css", "vim", "lua", "javascript", "typescript", "tsx"},
+            ensure_installed ={"lua", "json", "xml" ,"properties"},
+            -- Install parsers synchronously (only applied to `ensure_installed`)
+            sync_install = false,
+            -- Automatically install missing parsers when entering buffer
+            -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+            auto_install = true,
             -- 启用代码高亮功能
             highlight = {
                 enable = true,
@@ -26,15 +31,15 @@ local M = {
             incremental_selection = {
                 enable = true,
                 keymaps = {
-                init_selection = '<CR>',
-                node_incremental = '<CR>',
-                node_decremental = '<BS>',
-                scope_incremental = '<TAB>',
+                    init_selection = '<CR>',
+                    node_incremental = '<CR>',
+                    node_decremental = '<BS>',
+                    scope_incremental = '<TAB>',
                 }
             },
             -- 启用基于Treesitter的代码格式化(=) . NOTE: This is an experimental feature.
             indent = {
-                enable = true
+                enable = false
             }
         })
     end
