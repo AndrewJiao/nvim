@@ -9,6 +9,7 @@ local telescope = require("plugin.telescope")
 -- 标签页
 local bufferline = require("plugin.bufferline")
 
+local undo_tree = require("plugin.undo_tree")
 -- 注释
 local comment = require("plugin.comment")
 -- formatter
@@ -18,6 +19,9 @@ local treesitter = require("plugin.treesitter")
 -- 主题
 
 local theme = require("theme")
+
+
+vim.g.lazyloader_ssh_cmd = "ssh -i /Users/Andrew/.ssh/id_rsa.pub git@github.com"
 
 -- lazy插件管理器
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -44,5 +48,7 @@ require("lazy").setup({
     formatter,
     telescope,
     bufferline,
-    treesitter
+    treesitter,
+    undo_tree,
+    
 })
